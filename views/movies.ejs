@@ -8,10 +8,25 @@
 </head>
 <body>
     <h1>Hello World NaJaaa</h1>
+    <h2>แบบฟอร์มลงทะเบียน</h2>
+    <form action="/movies/insert" method="post">
+        ชื่อภาพยนตร์ภาษาไทย : <br>
+        <input type="text" name="nameThai" required> <br>
+        ชื่อภาพยนตร์ภาษาอังกฤษ : <br>
+        <input type="text" name="nameEng" required> <br>
+        ความยาวภาพยนตร์: <br>
+        <input type="text" name="RunningTime" required> <br> <br>
+        <input type="submit" value="เพิ่มข้อมูล">
+    </form> <br><hr>
     <div>
-        <%= callMovies[0].nameThai %> <br>
-        <%= callMovies[0].nameEng %>
-    
+        <% callMovies.forEach(movie=>{ %>
+        <%= movie.nameThai %> <br>
+        <%= movie.nameEng %> <br>
+        <%= movie.RunningTime %>      <br>
+        <a href="/movies/update/<%=movie._id%>">Update</a> <br>
+        <a href="/movies/delete/<%=movie._id%>">Delete</a> <hr>
+        <% })%>
+  
     </div>
 </body>
 </html>

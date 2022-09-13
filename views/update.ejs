@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>แบบฟอร์มแก้ไข</h2>
+    <form action="/movies/update/<%=data._id %>" method="post">
+        ชื่อภาพยนตร์ภาษาไทย : <br>
+        <input type="text" name="nameThai" required value="<%=data.nameThai %>"> <br>
+        ชื่อภาพยนตร์ภาษาอังกฤษ : <br>
+        <input type="text" name="nameEng" required value="<%=data.nameEng %>"> <br>
+        ความยาวภาพยนตร์: <br>
+        <input type="text" name="RunningTime" required value="<%=data.RunningTime %>"> <br> <br>
+        <input type="submit" value="เพิ่มข้อมูล">
+    </form> <br><hr>
+    <a href="/movies">back</a>
+</body>
+</html>
